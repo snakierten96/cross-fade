@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<div class="col">
+  <div id="image-container">
+    <img [src]="image.main" alt="" />
+    <ul>
+      <li *ngFor="let alternate of image.alternates">
+        <img [src]="alternate" alt="" />
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="col">
+  <ul>
+    <li *ngFor="let swatch of getSwatches(); let idx = index;">
+      <img [src]="swatch" [alt]="idx+1" (click)="setImage(idx+1)" />
+    </li>
+  </ul>
+</div>
