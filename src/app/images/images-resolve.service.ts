@@ -3,7 +3,7 @@ import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 
 import { Observable, Subscriber } from 'rxjs/Rx';
 
-import { ImageData } from '../mock-data';
+import { ImageData } from './index';
 import { ImagesService } from './images.service';
 
 @Injectable()

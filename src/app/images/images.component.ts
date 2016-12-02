@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Observable, Subscription } from 'rxjs/Rx';
 
-import { ImageData } from '../mock-data';
+import { ImageData } from './index';
 import { ImgHelperDirective } from './img-helper.directive';
 
 @Component({

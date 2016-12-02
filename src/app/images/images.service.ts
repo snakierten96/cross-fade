@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
 
-import { ImageData } from '../mock-data';
+import { ImageData } from './index';
 
 @Injectable()
 export class ImagesService {
@@ -14,7 +14,7 @@ export class ImagesService {
 
   getImages(): Observable<ImageData> {
     return this.http.get(this.url)
-      .flatMap(response => Observable.from(response.json().data))
+    .flatMap(response => Observable.from(response.json().data));
   }
 
 }
