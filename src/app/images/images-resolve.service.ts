@@ -12,17 +12,17 @@ export class ImagesResolveService implements Resolve<Observable<ImageData[]>> {
   constructor(private imagesService: ImagesService) { }
 
   resolve (route: ActivatedRouteSnapshot): Observable<ImageData[]> {
-    return this.imagesService.getImages().toArray()
-      .flatMap(response => this._preload(response))
+    return this.imagesService.getImages()
+      .concatMap(response => this._preload(response)).toArray()
   }
 
-  private _preload (response: ImageData[]): Observable<ImageData[]> {
-    return Observable.from(response).flatMap(image => {
-      return Observable.from([image.main, image.swatch, ...image.alternates])
-        .concatMap(this._loadImage)
-        .toArray()
-        .map(() => response)
-    })
+  private _mapper (image: ImageData): Observable<string> {
+    return Observable.from([image.main, image.swatch, ...image.alternates]);
+  }
+
+  private _preload (image: ImageData): Observable<ImageData> {
+    return this._mapper(image).concatMap(this._loadImage).toArray()
+      .map(() => image)
   }
 
   private _loadImage (imagePath: string): Observable<string | null> {

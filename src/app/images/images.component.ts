@@ -28,7 +28,8 @@ export class ImagesComponent implements OnInit, OnDestroy, AfterViewInit {
           console.log(data);
           this.images = data.data;
           this.image = this.images[0];
-        }
+        },
+        err => console.error(err)
       )
     )
   }
