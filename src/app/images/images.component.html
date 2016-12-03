@@ -4,8 +4,9 @@
       <img [src]="image.main" alt="" />
     </div>
     <ul class="alternates">
-      <li appImgHelper *ngFor="let alternate of image.alternates">
-        <img [src]="alternate" alt="" />
+      <li appImgHelper
+          *ngFor="let alternate of image.alternates; let idx = index;">
+        <img [src]="alternate" alt="" (click)="swapImage(idx+1)" />
       </li>
     </ul>
   </div>

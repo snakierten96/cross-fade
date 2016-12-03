@@ -17,7 +17,7 @@ export class ImagesResolveService implements Resolve<Observable<ImageData[]>> {
   }
 
   private _mapper (image: ImageData): Observable<string> {
-    return Observable.from([image.main, image.swatch, ...image.alternates]);
+    return Observable.from([image.swatch, ...image.others, ...image.alternates]);
   }
 
   private _preload (image: ImageData): Observable<ImageData> {

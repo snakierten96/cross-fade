@@ -24,9 +24,9 @@ export class ImagesComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
     this._subscriptions.push(
       this.route.data.subscribe(
-        (data: { data: ImageData[] }) => {
+        (data: { images: ImageData[] }) => {
           console.log(data);
-          this.images = data.data;
+          this.images = data.images;
           this.image = this.images[0];
         },
         err => console.error(err)
@@ -49,6 +49,10 @@ export class ImagesComponent implements OnInit, OnDestroy, AfterViewInit {
 
   setImage(index: number): void {
     this.image = this.images[index - 1];
+  }
+
+  swapImage(index: number): void {
+    this.image.main = this.image.others[ index - 1];
   }
 
 }
