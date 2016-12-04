@@ -4,17 +4,56 @@
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+  &.alternates, &.swatches {
+    list-style: none;
+    padding: 0;
 
-  li {
-    float: left;
-    padding: 2px;
+    li {
+      cursor: pointer;
+      float: left;
+      padding: 2px;
+    }
   }
 }
+
 
 #image-container {
   img {
     border: 1px lightgray solid;
+  }
+}
+
+#image-wrapper {
+  position: relative;
+  width: 290px;
+  height: 386px;
+
+  img {
+    position: absolute;
+
+    /*
+    &.fade {
+      opacity: 0;
+      transition: all 1s ease-out;
+    }
+    */
+  }
+}
+
+ul.alternates {
+  li {
+    width: 92px;
+    height: 122px;
+  }
+
+  img {
+    position: absolute;
+
+    /*
+    &.fade {
+      opacity: 0;
+      transition: all 1s ease-out;
+    }
+    */
   }
 }

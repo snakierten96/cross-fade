@@ -6,7 +6,7 @@ import { Directive, ElementRef, ViewContainerRef, Renderer } from '@angular/core
 export class ImgHelperDirective {
 
   constructor(private viewContainerRef: ViewContainerRef, private renderer: Renderer) {
-    //console.log(this.viewContainerRef.element);
+    //console.log(this.viewContainerRef);
   }
 
   hello(idx: number) {

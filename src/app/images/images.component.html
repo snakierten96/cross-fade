@@ -2,19 +2,25 @@
   <div id="image-container">
     <div appImgHelper id="image-wrapper">
       <img [src]="image.main" alt="" />
+      <img [@crossFade]="status"
+           (@crossFade.done)="animationDone($event)"
+           [src]="copy.main" />
     </div>
     <ul class="alternates">
       <li appImgHelper
-          *ngFor="let alternate of image.alternates; let idx = index;">
-        <img [src]="alternate" alt="" (click)="swapImage(idx+1)" />
+          *ngFor="let alternate of image.alternates; let idx = index;"
+          (click)="swapImage(idx+1)">
+        <img [src]="alternate" alt="" />
+        <img [@crossFade]="status" [src]="copy.alternates[idx]" />
       </li>
     </ul>
   </div>
 </div>
 <div class="col">
   <ul class="swatches">
-    <li *ngFor="let swatch of getSwatches(); let idx = index;">
-      <img [src]="swatch" [alt]="idx+1" (click)="setImage(idx+1)" />
+    <li *ngFor="let swatch of getSwatches(); let idx = index;"
+        (click)="setImage(idx+1)">
+      <img [src]="swatch" [alt]="idx+1" />
     </li>
   </ul>
 </div>
