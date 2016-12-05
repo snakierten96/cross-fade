@@ -17,7 +17,7 @@ import { ImgHelperDirective } from './img-helper.directive';
     trigger('crossFade',[
       state('pre',  style({ opacity: 1 })),
       state('fade', style({ opacity: 0 })),
-      transition('pre => fade', animate('500ms ease-out'))
+      transition('pre => fade', animate('1s ease-out'))
     ])
   ]
 })
