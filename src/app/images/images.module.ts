@@ -6,6 +6,7 @@ import { ImgHelperDirective } from './img-helper.directive';
 import { ImagesService } from './images.service';
 import { ImagesResolveService } from './images-resolve.service';
 import { ImagesRouingModule } from './images-routing.module';
+import { ImgCrossFadeComponent } from './img-cross-fade/img-cross-fade.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ImagesRouingModule } from './images-routing.module';
   declarations: [
     ImagesComponent,
     ImgHelperDirective,
+    ImgCrossFadeComponent,
   ],
   providers: [
     ImagesService,

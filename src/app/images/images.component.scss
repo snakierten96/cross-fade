@@ -16,44 +16,33 @@ ul {
   }
 }
 
-
 #image-container {
   img {
     border: 1px lightgray solid;
   }
-}
 
-#image-wrapper {
-  position: relative;
-  width: 290px;
-  height: 386px;
+  #image-wrapper {
+    position: relative;
+    width: 290px;
+    height: 386px;
 
-  img {
-    position: absolute;
-
-    /*
-    &.fade {
-      opacity: 0;
-      transition: all 1s ease-out;
+    img {
+      position: absolute;
     }
-    */
-  }
-}
 
-ul.alternates {
-  li {
-    width: 92px;
-    height: 122px;
   }
 
-  img {
-    position: absolute;
+  ul.alternates {
+    li {
+      width: 92px;
+      height: 122px;
 
-    /*
-    &.fade {
-      opacity: 0;
-      transition: all 1s ease-out;
+      img {
+        position: absolute;
+      }
+
     }
-    */
+
   }
+
 }

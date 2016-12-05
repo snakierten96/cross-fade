@@ -1,0 +1,3 @@
+<img [src]="main"  />
+<img *ngIf="status !== 'off'" 
+     [@crossFade]="status" (@crossFade.done)="animationDone($event)" [src]="copy" />

@@ -17,7 +17,7 @@ import { ImgHelperDirective } from './img-helper.directive';
     trigger('crossFade',[
       state('pre',  style({ opacity: 1 })),
       state('fade', style({ opacity: 0 })),
-      transition('pre => fade', animate('1s ease-out'))
+      transition('pre => fade', animate('500ms ease-out'))
     ])
   ]
 })
@@ -40,6 +40,7 @@ export class ImagesComponent implements OnInit, OnDestroy, AfterViewInit {
 
   animationDone(event: AnimationTransitionEvent) {
     if ( event.fromState === 'pre' && event.toState === 'fade') {
+      this.copy.main = this.image.main;
       this.copy.alternates = this.image.alternates;
     }
   }
