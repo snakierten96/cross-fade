@@ -63,7 +63,7 @@ export class ImgCrossFadeComponent implements OnInit, OnDestroy {
   animationDone(event: AnimationTransitionEvent): void {
     if ( event.fromState === 'pre' && event.toState === 'fade') {
       this.copy = this.main;
-      this.toggleState();
+      this.toggleState();   // switch off
     }
   }
 
